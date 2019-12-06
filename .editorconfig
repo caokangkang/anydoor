@@ -1,0 +1,28 @@
+# 告诉EditorConfig插件，这是根文件，不要继续往上查找
+
+root = true;
+
+# 匹配全部文件
+[*]
+
+# 结尾换行符，可选"lf"、 "cr" 、 "crlf"
+end_of_line = lf
+
+# 在文件结尾插入新行
+insert_final_newLine = true
+
+# 删除一行中的前后空格
+trim_trailing_whitespace = true
+
+
+# 匹配js和py结尾的文件
+[*.{js, py}]
+charset = utf-8
+
+# 缩进风格
+indent_style = spance
+index_size = 2
+
+
+[*.json]
+indent_size = 4
