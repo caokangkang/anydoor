@@ -7,7 +7,7 @@ root = true;
 charset = utf-8 # 匹配js和py结尾的文件
 
 # 缩进风格
-indent_style = spance
+indent_style = space
 index_size = 2
 
 end_of_line = lf  # 结尾换行符，可选"lf"、 "cr" 、 "crlf"
