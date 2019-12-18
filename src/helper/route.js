@@ -19,11 +19,10 @@ module.exports = async function (req, res, filePath) {
             const files = await readdir(filePath);
             res.statusCode = 200;
             res.setHeader("Content-Type", 'text/html');
-            // const dir = path.relative(config.root, filePath)
+            const dir = path.relative(config.root, filePath);
             const data = {
                 title: path.basename(filePath),
-                // dir: dir ? `/${dir}` : '',
-                dir: path.relative(config.root, filePath),
+                dir: dir ? `/${dir}` : '',
                 files
             }
             res.end(template(data));
