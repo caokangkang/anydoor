@@ -10,6 +10,7 @@ const template = Handlebars.compile(source);
 const mime = require("./mime.js");
 const compress = require("./compress.js");
 const range = require("./range.js");
+const isFresh = require("./cache.js");
 
 
 const config = require("../config/defaultConfig.js");
@@ -18,8 +19,14 @@ module.exports = async function (req, res, filePath) {
         const stats = await stat(filePath);
         if(stats.isFile()){
             const contentType = mime(filePath);
-            res.statusCode = 200;
             res.setHeader("Content-Type", contentType);
+
+            if(isFresh(stats, req, res)){
+                res.statusCode = 304;
+                res.end();
+                return;
+            }
+
             let rs;
             const {code, start, end} = range(stats.size, req, res);
             if(code == 200){
