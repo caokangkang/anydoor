@@ -6,7 +6,6 @@ module.exports = (totalSize, req, res) => {
   }
   // 获取最大最小值
   const sizes = range.match(/bytes=(\d*)-(\d*)/);
-  let sizeType = false;
   const end = sizes[2] ? parseInt(sizes[2]) : totalSize;
   const start = sizes[1] ? parseInt(sizes[1]) : 0;
 
