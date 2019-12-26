@@ -11,10 +11,7 @@ const mime = require("./mime.js");
 const compress = require("./compress.js");
 const range = require("./range.js");
 const isFresh = require("./cache.js");
-
-
-const config = require("../config/defaultConfig.js");
-module.exports = async function (req, res, filePath) {
+module.exports = async function (req, res, filePath, config) {
     try{
         const stats = await stat(filePath);
         if(stats.isFile()){
