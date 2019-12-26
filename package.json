@@ -1,5 +1,5 @@
 {
-  "name": "anydoor",
+  "name": "anydoor-ckk",
   "version": "1.0.0",
   "description": "Tiny NodeJS Static Web server",
   "main": "src/app.js",
